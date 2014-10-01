@@ -6,7 +6,7 @@ Clipboard share tool in LAN via UDP broadcast for multiple computer users. datas
 
 Modify `config.py` as you like.
 
-Run `server.py` as a daemon for reciving clipboard text. Run `client.py` to send current clipboard text to every machine in LAN. Only servers with same `username` config will recieve the clipboard.
+Run `clipserver.py start` as a daemon for reciving clipboard text. Run `sendclip.py` to send current clipboard text to every machine in LAN. Only servers with same `username` config will recieve the clipboard.
 
 # Installation
 
