@@ -1,9 +1,11 @@
 #!/usr/bin/env python
+import sys
 import socket
 import platform
 import json
 import pyperclip as clip
 import rc4
+from daemon import Daemon
 import config
 
 message_stack = []
@@ -44,5 +46,19 @@ def main():
             print 'message (%s ...) from : %s' % (message[:50], address[0])
             clip.copy(message)
 
+class ClipDaemon(Daemon):
+    def run(self):
+        main()
+
 if __name__ == "__main__" :
-    main()
+    if len(sys.argv) == 1:
+        main()
+    else:
+        action = sys.argv[1]
+        clip_daemon = ClipDaemon('/tmp/clipcast.pid')
+        if action == 'start':
+            clip_daemon.start()
+        elif action == 'stop':
+            clip_daemon.stop()
+        elif action == 'restart':
+            clip_daemon.restart()
