@@ -12,6 +12,17 @@ You can make an soft link in your PATH to `sendclip.py` or add an alias to it fo
 
 # Installation
 
-You need to install `pyperclip` using pip.
-
 This program is tested under python 2.7, ubuntu 14.04 and osx 10.9.
+
+## OSX
+
+1. Copy brc.clipserver.plist to `~/Library/LaunchAgent/brc.clipserver.plist`
+2. Edit `~/Library/LaunchAgent/brc.clipserver.plist`, modify `/Path/to/clipcast/clipserver.py` to your `clipserver.py` path.
+3. `launchctl load ~/Library/LaunchAgent/brc.clipserver.plist`
+4. `launchctl start brc.clipserver`
+
+## Ubuntu (Gnome or Unity)
+
+1. run `gnome-session-properties`
+2. Add a startup program, Name is "Clipserver", Command is "/Path/to/clipcast/clipserver.py start"
+3. Save. Clipserver will start in your next gnome session.
