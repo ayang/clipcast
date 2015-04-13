@@ -86,9 +86,8 @@ def _copyCygwin(text):
 
 
 def _copyOSX(text):
-    text = str(text)
     p = Popen(['pbcopy', 'w'], stdin=PIPE, close_fds=True)
-    p.communicate(input=text.encode('utf-8'))
+    p.communicate(input=text)
 
 
 def _pasteOSX():
