@@ -26,8 +26,8 @@ def main():
         if i + 1 == thunk_count:
             msg['last'] = True
         msg = json.dumps(msg)
-        print 'Length of message is %d.' % len(msg)
-        my_socket.sendto(msg, ('<broadcast>', config.port))
+        # print 'Length of message is %d.' % len(msg)
+        my_socket.sendto(msg, (config.broadcast_network, config.port))
     my_socket.close()
 
 if __name__ == '__main__':
