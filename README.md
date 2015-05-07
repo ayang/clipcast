@@ -2,6 +2,7 @@
 
 Clipboard share tool in LAN via UDP broadcast for multiple computer users. datas are encrypted by rc4.
 
+**This Project will not be maintenanced, Now I use another tool which is also developed by me,  https://github.com/ayang/sendclip.**
 # Usage
 
 Modify `config.py` as you like.
